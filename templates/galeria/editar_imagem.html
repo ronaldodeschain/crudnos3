@@ -11,7 +11,7 @@
         <main class="principal">
             {%include 'partials/_menu-lateral.html'%}
             <section class="galeria" style="margin-left: 5em">
-                <form action="{% url 'nova_imagem' %}" method="POST" enctype="multipart/form-data">
+                <form action="{% url 'editar_imagem' foto_id %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="row">
                         {% for field in form.visible_fields %}
@@ -22,7 +22,7 @@
                         {%endfor%}
                     </div>
                     <div>
-                        <button class="btn btn-success col-12" style="padding: top 5px;" type="submit">Cadastrar Nova Imagem</button>
+                        <button class="btn btn-success col-12" style="padding: top 5px;" type="submit">Editar Imagem</button>
                     </div>
                 </form>
             </section>
