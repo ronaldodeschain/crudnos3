@@ -43,7 +43,7 @@ def cadastro(request):
             senha = form["senha_1"].value()
 
             if User.objects.filter(username=nome).exists():
-                messages.error(request,f'Usuário já existente!')
+                messages.error(request,'Usuário já existente!')
                 return redirect("cadastro")
             
             usuario = User.objects.create_user(
@@ -52,7 +52,7 @@ def cadastro(request):
                 password= senha                
             )
             usuario.save()
-            messages.success(request,f'Cadastro efetuado com sucesso!')
+            messages.success(request,'Cadastro efetuado com sucesso!')
             return redirect('login')
         
 
@@ -60,5 +60,5 @@ def cadastro(request):
     
 def logout(request):
     auth.logout(request)
-    messages.success(request,f'Logout efetuado com sucesso')
+    messages.success(request,'Logout efetuado com sucesso')
     return redirect('login')

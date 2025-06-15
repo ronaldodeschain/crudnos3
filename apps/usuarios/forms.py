@@ -1,9 +1,11 @@
 from django import forms
 
 class LoginForms(forms.Form):
-    nome_login = forms.CharField(label="Nome do Login",required=True,
-    max_length=100,
-    widget=forms.TextInput(
+    nome_login = forms.CharField(
+        label="Nome do Login",
+        required=True,
+        max_length=100,
+        widget=forms.TextInput(
             attrs={
                 "class":"form-control",
                 "placeholder":"Ex: Erasmo Carlos"
@@ -73,7 +75,7 @@ class CadastroForms(forms.Form):
 
         if nome:
             nome = nome.strip()
-            if " " in nome:
+            if ' ' in nome:
                 raise forms.ValidationError('Usuário não pode conter espaços')
             else:
                 return nome

@@ -12,6 +12,7 @@ def index(request):
     if not request.user.is_authenticated:
         messages.error(request,f'Precisa estar logado!')
         return redirect('login')
+    
     fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
     return render(request, 'galeria/index.html',{"cards":fotografias})
 
@@ -60,7 +61,7 @@ def editar_imagem(request,foto_id):
         form = FotografiaForms(request.POST,request.FILES, instance=fotografia)
         if form.is_valid():
             form.save()
-            messages.success(request,f'Imagem editada com sucesso!')
+            messages.success(request,'Imagem editada com sucesso!')
             return redirect('index')
 
     return render(request,'galeria/editar_imagem.html', {'form':form,'foto_id':foto_id})
