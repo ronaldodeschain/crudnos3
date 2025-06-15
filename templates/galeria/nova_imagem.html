@@ -1,7 +1,15 @@
-{% extends 'shared/base.html' %}
 {% load static %}
-{% block content %}
 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+{%include 'partials/_head.html'%}
+
+<body>
+    <div class="pagina-inicial">
+        {%include 'partials/_header.html'%}
+        <main class="principal">
+            {%include 'partials/_menu-lateral.html'%}
             <section class="galeria" style="margin-left: 5em">
                 <form action="{% url 'nova_imagem' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -22,4 +30,4 @@
     </div>
 </body>
 
-{% endblock %}
+{% include 'partials/_footer.html' %}
