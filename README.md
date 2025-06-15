@@ -1,6 +1,8 @@
 # crudnos3
 Repositório para o curso de Crud no s3 da Alura
 
+Link para outros cursos da formação [Django](https://github.com/ronaldodeschain/python_alura) que fiz recentemente.
+
 Neste curso criei uma conta na AWS e aprendi a subir os arquivos para a s3. Foi um processo relativamente simples, extrai as variáveis de ambiente,
 melhorei a otimização das páginas utilizando pastas de partials
 Abaixo algumas das telas do projeto:
